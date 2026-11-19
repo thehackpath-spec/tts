@@ -1,0 +1,14 @@
+name = "donation-queue-worker"
+main = "src/index.js"
+compatibility_date = "2026-11-19"
+
+[vars]
+# Set SECRET with: npx wrangler secret put SECRET
+
+[[durable_objects.bindings]]
+name = "DONATION_QUEUE"
+class_name = "DonationQueue"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["DonationQueue"]
